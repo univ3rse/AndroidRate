@@ -65,7 +65,8 @@ public final class AppRate {
     }
 
     private static boolean isOverDate(long targetDate, byte threshold) {
-        return new Date().getTime() - targetDate >= threshold * 24 * 60 * 60 * 1000;
+        //threshold > 24 would cause an overflow because of it being treated as an int
+        return new Date().getTime() - targetDate >= (long) (threshold * 24 * 60 * 60 * 1000);
     }
 
     public AppRate setLaunchTimes(@SuppressWarnings("SameParameterValue") byte launchTimes) {
