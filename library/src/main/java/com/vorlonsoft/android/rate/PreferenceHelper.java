@@ -73,6 +73,12 @@ final class PreferenceHelper {
         editor.apply();
     }
 
+    static void clearRemindInterval(Context context) {
+        SharedPreferences.Editor editor = getPreferencesEditor(context);
+        editor.remove(PREF_KEY_REMIND_INTERVAL);
+        editor.apply();
+    }
+
     static long getRemindInterval(Context context) {
         return getPreferences(context).getLong(PREF_KEY_REMIND_INTERVAL, 0);
     }

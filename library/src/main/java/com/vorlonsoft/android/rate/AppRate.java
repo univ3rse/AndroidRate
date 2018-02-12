@@ -126,6 +126,12 @@ public final class AppRate {
     }
 
     @SuppressWarnings("unused")
+    public AppRate clearRemindInterval() {
+        PreferenceHelper.clearRemindInterval(context);
+        return this;
+    }
+
+    @SuppressWarnings("unused")
     public AppRate setAgreeShowDialog(boolean clear) {
         PreferenceHelper.setAgreeShowDialog(context, clear);
         return this;
